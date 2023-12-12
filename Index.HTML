@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAVEL WEBSITE</title>
+  <link rel="stylesheet" href="/Style.CSS"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+  <body>
+    <!-- THE NAVBAR/HEADER SECTION -->
+    <header>
+        <a href="#" class="brand">TRAVEL</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">EXPLORE</a>
+                <a href="#">GALLERY</a>
+                <a href="#">CONTACT</a>
+            </div>
+        </div>
+    </header>
+    <!-- THE NEW/HOME SECTION -->
+    <section class="home">
+      <video class="video-slide active" src="/VIDEO 1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="/VIDEO 2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="/VIDEO 3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="/VIDEO 4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="/VIDEO 5.mp4" autoplay muted loop></video>
+
+      
+        <div class="content">
+          <h1>WONDERFUL <br><span>ISLAND.</span></h1>
+          <p>Welcome To Wonderful Island, An Idyllic Paradise Nestled Amidst Azure Waters And Lush Greenery. This Enchanting Destination Boasts Pristine Beaches, Vibrant Coral Reefs, And Captivating Sunsets That Paint The Sky In Hues Of Orange And Pink. Explore Its Rich Biodiversity, From Exotic Flora To Rare Wildlife. Indulge In Local Delicacies, Unwind In Luxurious Resorts, Or Embark On Thrilling Adventures. Come Experience Pure Bliss In The Heart Of Nature's Embrace At Wonderful Island.</p>
+          <a href="#">Read More</a>
+        </div>
+        
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+        </div>
+    </section>
+    
+    <!-- JAVASCRIPT FOR VIDEO SLIDER NAVIGATION -->
+    <script>
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+
+
+      var sliderNav = function(manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        })
+        
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        })
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+       }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        })
+      });
+    </script>
+  </body>
+</html>
